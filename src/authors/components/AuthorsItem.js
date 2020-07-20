@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '/AuthorsItem.css'
+import './AuthorsItem.css';
 
 
 const AuthorsItem = props => {
@@ -12,9 +12,12 @@ const AuthorsItem = props => {
           </div>
           <div className="authors-item__info">
            <h2>{props.title}</h2>
+           <h2>{props.subject}</h2>
            <h2>{props.category}</h2>
            <h3>{props.body}</h3>
-           <h3>{props.NoStories} {props.NoStories === 1 ? 'story' : 'News'}</h3>
+           <h3>{props.date}</h3>
+           <h3>{props.NoStories} {props.NoStories === 1 ? 'story' : 'More News'}</h3>
+           
 
           </div>
 

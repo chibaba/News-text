@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 import AuthorsItem from './AuthorsItem';
 
-import '/AuthorsList.css'
+import './AuthorsList.css'
 
 
 const AuthorsList = props => {
@@ -23,7 +23,7 @@ const AuthorsList = props => {
                   body={author.body}
                   image={author.image}
                   date={author.date}
-                  NoStories={user.news}
+                  NoStories={author.news}
                    />
         ))}
     </ul>
