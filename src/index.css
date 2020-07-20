@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: #1a302f;
+    background: radial-gradient(ellipse farthest-corner at center top, #be775b 43%, rgb(8, 19, 19) 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
