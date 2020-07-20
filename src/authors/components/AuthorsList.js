@@ -13,7 +13,7 @@ const AuthorsList = props => {
             </div>
         )
     }
-    return <ul>
+    return <ul className="authors-list">
         {props.items.map(author => (
                  <AuthorsItem key={author.id} 
                  id={author.id}
