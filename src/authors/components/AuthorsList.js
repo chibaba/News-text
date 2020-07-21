@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 
 import AuthorsItem from './AuthorsItem';
+import Card from '../../common/components/UIElements/Card';
 
 import './AuthorsList.css'
 
@@ -9,7 +10,9 @@ const AuthorsList = props => {
     if (props.items.length === 0) {
         return (
             <div className="center">
+            <Card>
                 <h2>No authors news found</h2>
+                </Card>
             </div>
         )
     }

@@ -2,12 +2,15 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 
 import Authors from './authors/pages/Authors';
-import NewNews  from './news/pages/NewNews'
+import NewNews  from './news/pages/NewNews';
+import MainNavigation from './common/components/Navigation/MainNavigation';
+
 
 
 const App = () => {
   return (
        <Router>
+       <MainNavigation />
        <Switch>
   <Route path="/" exact>
     <Authors/>  
