@@ -1,7 +1,6 @@
 import React from 'react';
 
-const NewNews = () => {
-    import React from 'react';
+
 
 import {VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH}  from  '../../common/util/validators'
 import Input from '../../common/components/FormElements/Input.js'
@@ -77,7 +76,3 @@ const NewCars = () => {
     </form>
 }
 export default NewCars;
-    return <h2>NewNews  Works!</h2>
-};
-
-export default NewNews;
