@@ -23,7 +23,7 @@ const AuthorsList = props => {
      subject={news.subject} 
      category={news.category}
      body={news.body}
-     image={news.image}
+     image={news.imageUrl}
      date={news.date}
       />)}
 
