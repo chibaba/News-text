@@ -4,56 +4,52 @@ import { useParams } from 'react-router-dom';
 import Input from '../../common/components/FormElements/Input';
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH} from '../../common/util/validators';
 
-import img from '../../common/components/images/download.jpeg'
-import img2 from '../../common/components/images/download (1).jpeg'
+
 import Card from '../../common/components/UIElements/Card';
 
-import { useForm } from '../../common/hooks/form-hook'
+import { useForm } from '../../common/hooks/form-hooks'
 import Button from '../../common/components/FormElements/Button';
 
-import './CarForm.css' ;
+import './NewsForm.css' ;
 
 
-const DUMMY_CARS = [
+const DUMMY_NEWS = [
     {
-    id: '1',
-    color: 'black',
-    brand: 'lexus sport car',
-    year: '1999',
-    image: img,
-    plateNum: 'IKJ 23456',
-    address: '312 Herbert Macaulay Way',
-    location: {
-        lat:6.5065566,
-        lng:3.3762775
-    },
+        id: 'u1',
+        title: 'Performace Complexity',
+        category: 'Tech News',
+        subject: 'Every booster still .',
+        body: "82 with 42 posters participating\r\n<ul><li>\r\n Falcon 9 B1058.2 stands tall on SLC-40,",
+        image: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+        date:"2020-07-20T16:18:08Z",
+        NoStories: 3
 
-    creator: 'u1'
-},
-{
-    id: '2',
-    color: 'black',
-    brand: 'lexus sport car2',
-    year: '1999',
-    image: img2,
-    plateNum: 'ABJ 3457',
-    address: '312 Herbert Macaulay Way',
-    location: {
-        lat:6.5065566,
-        lng:3.3762775
     },
+    {
+        id: 'u2',
+        title: 'Performace Complexity',
+        category: 'Business News',
+        subject: 'Every booster still .',
+        body: "82 with 42 posters participating\r\n<ul><li>\r\n Falcon 9 B1058.2 stands tall on SLC-40,",
+        image: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+        date:"2020-07-20T16:18:08Z",
+        NoStories: 3
 
-    creator: '2'
-}
+    }
+
+
 
 ];
-const UpdateCar = () => {
+
+
+
+const UpdateNews = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    const carId = useParams().carId;
+    const newsId = useParams().newsId;
 
     
-    const  [formState, inputHandler, setFormData] =   useForm({
+    const  [formState, inputHandler, setFormData] = useForm({
         title: {
             value: '',
             isValid: false
@@ -67,17 +63,17 @@ const UpdateCar = () => {
     false
     ) 
     
-    const identifiedCar = DUMMY_CARS.find(c => c.id === carId);
+    const identifiedNews = DUMMY_NEWS.find(c => c.id === newsId);
 
     useEffect(() => {
-        if (identifiedCar) {
+        if (identifiedNews) {
             setFormData({
                 title: {
-                    value: identifiedCar.title,
+                    value: identifiedNews.title,
                     isValid: true
                 },
                 description: {
-                    value: identifiedCar.description,
+                    value: identifiedNews.description,
                     isValid: true
                 }
             },
@@ -87,22 +83,22 @@ const UpdateCar = () => {
         }
         
          setIsLoading(false);
-    }, [setFormData, identifiedCar]);
+    }, [setFormData, identifiedNews]);
 
  
 
-            const carUpdateSubmitHandler = event => {
+            const newsUpdateSubmitHandler = event => {
                 event.preventDefault();
                 console.log(formState.inputs);
             }
 
 
 
-    if(!identifiedCar) {
+    if(!identifiedNews) {
         return ( <div className="center">
         <Card>
             <h2>
-                Could not find Place!
+                Could not find latest news!
             </h2>
             </Card>
         </div>
@@ -119,7 +115,7 @@ const UpdateCar = () => {
      }
     return(
    
-     <form className="car-form" onSubmit={carUpdateSubmitHandler}>
+     <form className="news-form" onSubmit={newsUpdateSubmitHandler}>
         <Input id="title" 
         element="input" 
         type="text" 
@@ -139,10 +135,10 @@ const UpdateCar = () => {
              initialValue={formState.inputs.description.value}
              initialValid={formState.inputs.description.isValid}
          />
-         <Button type="submit"  disabled={!formState.isValid}>UpdATE cAR</Button>
+         <Button type="submit"  disabled={!formState.isValid}>UpdATE nEWS</Button>
     </form>
         )
     
 };
 
-export default UpdateCar
+export default UpdateNews;

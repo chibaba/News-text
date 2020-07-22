@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Card from '../../common/components/UIElements/Card'
-import './AuthorsList';
+import './NewsList.css';
 import NewsItem from './NewsItem';
 
 const AuthorsList = props => {

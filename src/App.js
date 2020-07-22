@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 
 import Auth    from  './authors/pages/Auth'
 import UpdateNews from './news/pages/UpdateNews'
-import NewsList from './news/pages/NewsList';
+import NewsList from './news/pages/AuthorsList';
 import { AuthContext } from './common/context/auth-context'
 import Authors from './authors/pages/Authors';
 import NewNews  from './news/pages/NewNews';
@@ -69,6 +69,4 @@ const App = () => {
 )
 
 }
-
-
 export default App;

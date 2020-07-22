@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
 import AuthorsItem from './AuthorsItem';
 import Card from '../../common/components/UIElements/Card';
